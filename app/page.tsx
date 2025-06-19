@@ -46,64 +46,94 @@ export default function ModernRefrigerationWebsite() {
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                  <Snowflake className="h-6 w-6 text-white" />
-                </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-cyan-400 rounded-full animate-pulse" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  FrostTech
-                </h1>
-                <p className="text-xs text-slate-400">Ψυκτικά Συστήματα</p>
-              </div>
-            </div>
-
-            <div className="hidden lg:flex items-center space-x-8">
-              <a href="#home" className="text-slate-300 hover:text-cyan-400 transition-colors relative group">
-                Αρχική
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
-              </a>
-              <a href="#services" className="text-slate-300 hover:text-cyan-400 transition-colors relative group">
-                Υπηρεσίες
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
-              </a>
-              <a href="#tech" className="text-slate-300 hover:text-cyan-400 transition-colors relative group">
-                Τεχνολογία
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
-              </a>
-              <a href="#contact" className="text-slate-300 hover:text-cyan-400 transition-colors relative group">
-                Επικοινωνία
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
-              </a>
-            </div>
-
-            <div className="hidden lg:flex items-center space-x-4">
-              <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-slate-800">
-                <Phone className="h-4 w-4 mr-2" />
-                210 123 4567
-              </Button>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0">
-                Επείγον
-              </Button>
-            </div>
-
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden text-white"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+<nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800">
+  <div className="container mx-auto px-6 py-4">
+    {/* Top Nav Row */}
+    <div className="flex items-center justify-between">
+      {/* Logo */}
+      <div className="flex items-center space-x-3">
+        <div className="relative">
+          <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+            <Snowflake className="h-6 w-6 text-white" />
           </div>
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-cyan-400 rounded-full animate-pulse" />
         </div>
-      </nav>
+        <div>
+          <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            FrostTech
+          </h1>
+          <p className="text-xs text-slate-400">Ψυκτικά Συστήματα</p>
+        </div>
+      </div>
+
+      {/* Desktop Menu */}
+      <div className="hidden lg:flex items-center space-x-8">
+        <a href="#home" className="text-slate-300 hover:text-cyan-400 transition-colors relative group">
+          Αρχική
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
+        </a>
+        <a href="#services" className="text-slate-300 hover:text-cyan-400 transition-colors relative group">
+          Υπηρεσίες
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
+        </a>
+        <a href="#tech" className="text-slate-300 hover:text-cyan-400 transition-colors relative group">
+          Τεχνολογία
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
+        </a>
+        <a href="#contact" className="text-slate-300 hover:text-cyan-400 transition-colors relative group">
+          Επικοινωνία
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
+        </a>
+      </div>
+
+      {/* Desktop Buttons */}
+      <div className="hidden lg:flex items-center space-x-4">
+        <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-slate-800">
+          <Phone className="h-4 w-4 mr-2" />
+          210 123 4567
+        </Button>
+        <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0">
+          Επείγον
+        </Button>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <Button
+        variant="ghost"
+        size="sm"
+        className="lg:hidden text-white"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </Button>
+    </div>
+
+    {/* Mobile Menu Dropdown */}
+    {isMenuOpen && (
+      <div className="lg:hidden mt-4 space-y-4">
+        <a href="#home" className="block text-slate-300 hover:text-cyan-400 transition-colors">
+          Αρχική
+        </a>
+        <a href="#services" className="block text-slate-300 hover:text-cyan-400 transition-colors">
+          Υπηρεσίες
+        </a>
+        <a href="#tech" className="block text-slate-300 hover:text-cyan-400 transition-colors">
+          Τεχνολογία
+        </a>
+        <a href="#contact" className="block text-slate-300 hover:text-cyan-400 transition-colors">
+          Επικοινωνία
+        </a>
+        <Button variant="ghost" className="w-full text-slate-300 hover:text-white hover:bg-slate-800">
+          <Phone className="h-4 w-4 mr-2" />
+          210 123 4567
+        </Button>
+        <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0">
+          Επείγον
+        </Button>
+      </div>
+    )}
+  </div>
+</nav>
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
